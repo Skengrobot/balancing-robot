@@ -19,7 +19,8 @@ echo 7 > /sys/kernel/debug/omap_mux/spi0_cs0
 echo 6 > /sys/kernel/debug/omap_mux/gpmc_a2
 echo 6 > /sys/kernel/debug/omap_mux/gpmc_a3
 
-modprobe ti_tscadc
+# Seems the touchscreen kernel module was renamed
+modprobe ti_am335x_tscadc
 
 # PWM pins are 14 and 16
 ./pwm-enable -e 0 1 2
