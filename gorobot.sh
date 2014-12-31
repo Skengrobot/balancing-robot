@@ -7,18 +7,11 @@
 # Pins are mapped to inputs on the H-bridge as:
 # IN1 IN2 IN3 IN4
 # 11  12  13  17
-echo 7 > /sys/kernel/debug/omap_mux/gpmc_wait0
-echo 7 > /sys/kernel/debug/omap_mux/gpmc_ben1
-echo 7 > /sys/kernel/debug/omap_mux/gpmc_wpn
-echo 7 > /sys/kernel/debug/omap_mux/spi0_cs0
 
-#	sets input pin modes to ADC
+
 # also pins on P9 header
 # Accelerometer: 40
 # Gyroscope: 38
-echo 6 > /sys/kernel/debug/omap_mux/gpmc_a2
-echo 6 > /sys/kernel/debug/omap_mux/gpmc_a3
-
 # Seems the touchscreen kernel module was renamed
 modprobe ti_am335x_tscadc
 
