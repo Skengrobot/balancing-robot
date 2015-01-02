@@ -7,10 +7,16 @@ SLOTS=/sys/devices/bone_capemgr.8/slots
 # hbridge directions 
 # All pins are on the P9 header 
 # Pins are mapped to inputs on the H-bridge as:
-# IN1 IN2 IN3 IN4
-# 11  12  13  17
+# h-bridge pin:   IN1 IN2 IN3 IN4
+# bone pin:       11  12  13  17
+# OS gpio number: 30  60  31   5
 echo pinctrl-test-0 > $SLOTS
-
+gpio_outputs=( 30 60 31 5 )
+for pin in "$gpio_outputs[@]"
+do
+    echo $pin > /sys/class/gpio/export
+    echo out > /sys/class/gpio$pin/direction
+done
 
 # also pins on P9 header
 # Accelerometer: 40
