@@ -11,8 +11,8 @@ SLOTS=/sys/devices/bone_capemgr.8/slots
 # bone pin:       11  12  13  17
 # OS gpio number: 30  60  31   5
 echo pinctrl-test-0 > $SLOTS
-gpio_outputs=( 30 60 31 5 )
-for pin in "$gpio_outputs[@]"
+gpio_outputs=
+for pin in $( 30 60 31 5 );
 do
     echo $pin > /sys/class/gpio/export
     echo out > /sys/class/gpio$pin/direction
