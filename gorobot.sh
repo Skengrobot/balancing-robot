@@ -15,7 +15,7 @@ gpio_outputs=
 for pin in 30 60 31 5 ;
 do
     echo $pin > /sys/class/gpio/export
-    echo out > /sys/class/gpio$pin/direction
+    echo out > /sys/class/gpio/gpio$pin/direction
 done
 
 # also pins on P9 header
