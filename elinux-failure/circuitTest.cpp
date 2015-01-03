@@ -7,7 +7,7 @@
 #include <sstream>
 #include <unistd.h>
 
-#define FORWARD 0
+#define FORWARD 1
 #define BACKWARD 1
 #define IN1 30
 #define IN2 60
